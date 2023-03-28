@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            pokemon types
+        </title>
+        <style>
+         .typecontainer {  background-color:#212121;
+	overflow:auto;
+	height:auto;
+	width:140px;
+	max-height: 140px;
+	color:#EBEBEB;
+	display:flex;
+	flex-direction: column;
+  z-index: 999;
+  position: absolute;
+}
+    
+    
+    
+    
+.typecontainer button
+{
+	 margin-right: 0px;
+
+     border-radius:0px;
+  border: none;
+  outline: none;
+    padding: 7px 8px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+
+	width:100%;
+	color:white;
+	
+	
+	}	
+
+.typecontainer .highlight button:hover
+{
+	background-color:hsl(0deg 0% 74% / 51%);
+    cursor: pointer;
+	}
+
+.typecontainer .typesoption button:hover
+{
+	background-color:#00000085;
+	color:white;
+	
+}
+
+
+
+.types
+{
+  margin: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  top: 20px;
+  
+}
+
+.advantage
+{
+    background-color: rgb(24, 208, 0);
+    color: white;height: auto;
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    border: rgb(114, 114, 114) solid 1px;
+    font-size: 18px;
+    position: relative;
+    margin: 50px;
+ 
+  margin-bottom: 30px;
+}
+
+.disadvantage
+{
+    background-color: rgb(199, 30, 0);
+    color: white;height: auto;
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    border: rgb(114, 114, 114) solid 1px;
+    font-size: 18px;
+    position: relative;
+    margin: 50px;
+ 
+  margin-bottom: 30px;
+}
+
+.type
+{
+    height: 25px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: rgb(225, 225, 225);
+    color: rgb(125, 125, 125);
+    border: rgb(114, 114, 114) solid 1px;
+    font-size: 18px;
+    position: relative;
+    margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.typecontainer button::before
+{
+	
+  display: none;
+ 
+  top: 0px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  padding: 0px;
+  
+  white-space: pre;
+	}
+	::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background-color: rgb( 0 0 0 / 75%); 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999; 
+ 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666; 
+}
+
+    input[type=range] {
+  -webkit-appearance: block;
+  -moz-appearance: block;
+  height: 8.4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+    
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1.3px;
+  -webkit-appearance: none;
+  transition: all 0.4s ease;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background: var(--youtube-red);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-left: -1px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+input[type=range].volume {
+  height: 5px;
+  background-color: #fff;
+}
+
+input[type=range].volume::-webkit-slider-runnable-track {
+  background-color: transparent;
+}
+
+input[type=range].volume::-webkit-slider-thumb {
+  margin-left: 0;
+  height: 14px;
+  width: 14px;
+  background: #fff;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 1.3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 50px;
+  border: 1px solid var(--youtube-red);
+  background: var(--youtube-red);
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+input[type=range]:focus::-moz-range-track {
+  outline: none;
+}
+
+input[type=range].volume::-moz-range-thumb {
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+    
+    .typesoption
+{
+	
+	color:inherit;
+	background-color:rgba(75, 53, 53, 0.255);}
+.typesoption:hover
+{
+	background-color:rgb(255 255 255 / 0.11)}	
+.highlight
+{
+	background-color:hsl(0deg 0% 74% / 51%);
+	}
+	.highlight:hover
+	{
+		background-color:hsl(0deg 0% 74% / 51%);}
+        </style>
+    </head>
+    <body>
+      
+    
+
+        
+<div id ="typecontainer" class="typecontainer">
+            <button  class="typesbutton typesoption"  id="videospeedbutton" onclick="myFunction()" >Chose Type </button>
+     <div id="videospeed" style="display:none;">
+     <button class="typesoption"  onclick="chose(this) ; disadvantageadvantage()"  >fire</button>
+     <button class="typesoption"  onclick="chose(this)"  >water</button>
+     <button class="typesoption"  onclick="chose(this)"  >electric</button>
+     <button class="typesoption"  onclick="chose(this)"  >grass</button>
+     <button class="typesoption"  onclick="chose(this)"  >dragon</button>
+     
+     </div>                                                                                                    
+                                                                                                                                                  
+                                </div>
+
+                                  <div class="chosedtype">    <button id="type" style="    background-color: rgb(27, 68, 253);
+                                    color: white; top: 10px;
+    left: 160px;" class=" type ">Type</button>         </div>  
+                                    
+                                    
+                                    <div id="types" class="types">
+                                      <button id="fire"  class=" type ">fire</button> 
+                                      <button id="water"  class=" type ">water</button> 
+                                      <button id="electric"  class=" type ">electric</button> 
+                                      <button id="grass"  class=" type ">grass</button> 
+                                      <button id="dragon"  class=" type ">dragon</button> 
+                                        
+                                    </div>
+                                                                                                                       
+        <script>
+var ct = document.getElementById("type");          
+var Type = ct.innerHTML;     
+const fire = document.getElementById("fire");       
+const water = document.getElementById("water");       
+const electric = document.getElementById("electric");       
+const grass = document.getElementById("grass");       
+const dragon = document.getElementById("dragon");       
+
+     function chose(type)
+{
+  const typetext = type.innerHTML;
+  ct.innerHTML = type.innerHTML;
+}
+
+
+            function myFunction() {
+  const x = document.getElementById("videospeed");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function disadvantageadvantage()
+{
+
+switch(ct.innerHTML)
+{
+  case 'water':
+    fire.classList.remove('type');
+    fire.classList.add('advantage');
+    grass.classList.remove('type');
+    grass.classList.add('disadvantage');
+    electric.classList.remove('type');
+    electric.classList.add('disadvantage');
+    break;
+    case 'fire':
+      water.classList.remove('type');
+      grass.classList.remove('type');
+      water.classList.add('disadvantage');
+      grass.classList.add('advantage');
+      break;
+      default: 
+      fire.classList.add('type');
+      grass.classList.add('type');
+      water.classList.add('type');
+      break;
+}
+
+}
+
+            </script>
+    </body>
+</html>
